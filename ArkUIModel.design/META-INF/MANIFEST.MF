@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: ArkUIModel.design;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: ArkUIModel.design.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.sirius,
+ org.eclipse.sirius.common.acceleo.aql,
+ ArkUIModel.arkUIModel;bundle-version="1.0.0",
+ ArkUIModel.arkUIModel.edit;bundle-version="1.0.0",
+ ArkUIModel.arkUIModel.editor;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: %providerName
+Automatic-Module-Name: ArkUIModel.design
+

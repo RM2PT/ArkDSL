@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated arkUIModel -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="arkuimodel.arkUIModel.presentation.ArkUIModelModelWizardID"
+            name="%_UI_ArkUIModelModelWizard_label"
+            class="arkuimodel.arkUIModel.presentation.ArkUIModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ArkUIModelModelFile.gif">
+         <description>%_UI_ArkUIModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated arkUIModel -->
+      <editor
+            id="arkuimodel.arkUIModel.presentation.ArkUIModelEditorID"
+            name="%_UI_ArkUIModelEditor_label"
+            icon="icons/full/obj16/ArkUIModelModelFile.gif"
+            extensions="arkuimodel"
+            class="arkuimodel.arkUIModel.presentation.ArkUIModelEditor"
+            contributorClass="arkuimodel.arkUIModel.presentation.ArkUIModelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

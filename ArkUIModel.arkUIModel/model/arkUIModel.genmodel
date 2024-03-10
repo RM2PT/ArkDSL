@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ArkUIModel.arkUIModel/src-gen" creationIcons="false"
+    editDirectory="/ArkUIModel.arkUIModel.edit/src-gen" editorDirectory="/ArkUIModel.arkUIModel.editor/src-gen"
+    modelPluginID="ArkUIModel.arkUIModel" modelName="ArkUIModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>arkUIModel.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="ArkUIModel" basePackage="arkuimodel" disposableProviderFactory="true"
+      ecorePackage="arkUIModel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//DevicesType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//DevicesType/PHONE"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//DevicesType/TABLET"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//DevicesType/COMPUTER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//ExecuteType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//ExecuteType/SYN"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//ExecuteType/ASYNC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//HttpType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//HttpType/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//HttpType/POST"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//HttpType/HEAD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//VariableType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/class"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/number"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/array"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/callfun"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/resource"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//VariableType/any"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//PType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//PType/input"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//PType/output"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//LineType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//LineType/sequence"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//LineType/continue"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//LineType/condition"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//LineType/exception"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//RouteType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//RouteType/push"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//RouteType/back"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="arkUIModel.ecore#//UnionType">
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//UnionType/and"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//UnionType/or"/>
+      <genEnumLiterals ecoreEnumLiteral="arkUIModel.ecore#//UnionType/not"/>
+    </genEnums>
+    <genClasses ecoreClass="arkUIModel.ecore#//GUIModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GUIModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GUIModel/stylelibray"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GUIModel/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GUIModel/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GUIModel/rootpage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GUIModel/triggerevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GUIModel/animationlibray"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GUIModel/uilogic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GUIModel/uidesign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GUIModel/operationlibray"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Page/pageTitle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Page/isHome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Page/fileName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Page/uilogic"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Page/uidesign"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Page/subpages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Page/pageroute"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//UILogic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//UILogic/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UILogic/workflow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UILogic/pageparameter"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//UIDesign">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//UIDesign/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIDesign/pageview"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//PageStruct">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageStruct/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageStruct/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PageStruct/widgets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PageStruct/pageevent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//UIComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//UIComponent/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//UIComponent/widgetType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIComponent/widget"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIComponent/funflow"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIComponent/root"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIComponent/pagerefrence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIComponent/foreach"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIComponent/if"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//UIComponent/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextWidget/content"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TextWidget/textevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TextWidget/textstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ButtonWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ButtonWidget/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ButtonWidget/stateEffect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ButtonWidget/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ButtonWidget/buttonevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ButtonWidget/buttonstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//FlexContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//FlexContainer/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//FlexContainer/wrap"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//FlexContainer/justifyContent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//FlexContainer/alignItems"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//FlexContainer/alignContent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//FlexContainer/flexevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//FlexContainer/flexstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//StyleLibray">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//StyleLibray/styleclass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleLibray/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//StyleClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/aspectRatio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/paddingleft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/marginleft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/layoutWeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/align"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/backgroundColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/backgroundImage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/border"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/visibility"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//StyleClass/animationclass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/assign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/paddingright"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/paddingtop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/paddingbottom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/marginright"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/margintop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/marginbottom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/borderRadius"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/backgroundImageSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/rotate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StyleClass/zIndex"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//PrimitiveOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PrimitiveOperation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PrimitiveOperation/contains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PrimitiveOperation/returntype"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextInputWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputWidget/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputWidget/placeholder"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputWidget/controller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TextInputWidget/textinputevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TextInputWidget/textinputstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ListContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListContainer/initialIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListContainer/space"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListContainer/scroller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ListContainer/listitemcontainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ListContainer/listevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ListContainer/liststyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/fontColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/fontSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/minFontSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/maxFontSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/fontStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/fontWeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/textAlign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/lineHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/textOverflow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/fontFamily"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/maxLines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/decorationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/letterSpacing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/textCase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/baselineOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextStyle/decorationColor"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextInputStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/placeholderColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/placeholderFont"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/enterKeyType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/caretColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/maxLength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/fontColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/fontSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/fontStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/fontWeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/fontFamily"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputStyle/inputFilter"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Parameter/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Parameter/parameterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Parameter/pType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Parameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Parameter/assign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Parameter/const"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Parameter/state"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TypeCS">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TypeCS/type"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//RowContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//RowContainer/space"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//RowContainer/alignItems"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//RowContainer/justifyContent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//RowContainer/rowevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//RowContainer/rowstyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//RowContainer/bindMenu"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ColumnContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ColumnContainer/justifyContent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ColumnContainer/alignItems"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ColumnContainer/space"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ColumnContainer/columnevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ColumnContainer/columnstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ButtonStyle"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//FlexStyle"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//RowStyle"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//ColumnStyle"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//ListStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/listDirection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/edgeEffect"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/divider"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/editMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/chainAnimation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/scrollBar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/cachedCount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/strokeWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/startMargin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListStyle/endMargin"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ListItemStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListItemStyle/sticky"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListItemStyle/editable"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ListItemContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListItemContainer/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ListItemContainer/listitemevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ListItemContainer/listitemstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ImageWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageWidget/src"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ImageWidget/imageevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ImageWidget/imagestyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ImageStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/alt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/matchTextDirection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/fitOriginalSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/fillColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/objectFit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/objectRepeat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/autoResize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/renderMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/interpolation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/sourceSizeHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/syncLoad"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageStyle/sourceSizeWidth"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//ControlFlow">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ControlFlow/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ControlFlow/source"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TriggerEvent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TriggerEvent/eventclass"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onClick"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onTouch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onDragStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onDragEnter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onDragMove"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onDragLeave"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onDrop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onAppear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onDisAppear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/onAreaChange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Event/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//PageEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageEvent/onPageHide"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageEvent/aboutToAppear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageEvent/onPageShow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageEvent/onBackPress"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageEvent/aboutToDisappear"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ColumnEvent"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//RowEvent"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//FlexEvent"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//ImageEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageEvent/onComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageEvent/onError"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageEvent/onFinish"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextEvent/onFocus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextEvent/onBlur"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ButtonEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ButtonEvent/onBlur"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ButtonEvent/onFocus"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextInputEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputEvent/onChange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputEvent/onSubmit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputEvent/onCopy"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputEvent/onPaste"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputEvent/onCut"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputEvent/onEditChanged"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextInputEvent/onEditChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ListEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onScroll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onScrollIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onReachStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onReachEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onScrollStop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onItemDelete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onItemMove"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onBlur"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ListEvent/onFocus"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ListItemEvent"/>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//UIOperation"/>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//SeviceOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SeviceOperation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//LoopOp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//LoopOp/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//LoopOp/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//LoopOp/step"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//LoopOp/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//CaseOp">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//CaseOp/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//HttpOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//HttpOperation/httpType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//HttpOperation/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//HttpOperation/res"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//GetParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GetParameter/parm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GetParameter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//SetParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SetParameter/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SetParameter/parm"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//AnimationClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//AnimationClass/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//AnimationClass/curve"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//AnimationClass/delay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//AnimationClass/iterations"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//AnimationClass/playMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//AnimationClass/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ImageAnimator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ImageAnimator/imagesitem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ImageAnimator/imageanimatorevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ImageAnimator/imageanimatorstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ImagesItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImagesItem/src"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImagesItem/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImagesItem/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImagesItem/top"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImagesItem/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImagesItem/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ImageAnimatorStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorStyle/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorStyle/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorStyle/reverse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorStyle/fixedSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorStyle/preDecode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorStyle/fillMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorStyle/iterations"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ImageAnimatorEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorEvent/onStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorEvent/onPause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorEvent/onRepeat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorEvent/onCancel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ImageAnimatorEvent/onFinish"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//RouteSkip">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//RouteSkip/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//RouteSkip/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//RouteSkip/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//RouteSkip/page"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//GetRouteValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GetRouteValue/variable"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//ExtraOperation"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//SeqOp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SeqOp/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SeqOp/value"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//UIStruct">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//UIStruct/page"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//UIStruct/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//AnimationLibray">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//AnimationLibray/animationclass"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//Container"/>
+    <genClasses image="false" ecoreClass="arkUIModel.ecore#//Widget"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Entity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Entity/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Entity/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Entity/superEntity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Entity/entityrefrence"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//EntityAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//EntityAttribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//EntityAttribute/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//Array">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Array/length"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Array/atype"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//NavigationContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//NavigationContainer/toolbar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//NavigationContainer/menu"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//NavigationContainer/navigationevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//NavigationContainer/navigationstyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//NavigationContainer/title"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//NavigationStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//NavigationStyle/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//NavigationStyle/subTitle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//NavigationStyle/hideTitleBar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//NavigationStyle/hideBackButton"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//NavigationStyle/titleMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//NavigationStyle/hideToolBar"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//NavigationEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//NavigationEvent/onTitleModeChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ContainerItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ContainerItem/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ContainerItem/icon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ContainerItem/action"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ContainerItems">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ContainerItems/items"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ContainerItems/label"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//StartOp"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//EndOp"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//WorkFlow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//WorkFlow/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//WorkFlow/flowName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//WorkFlow/flowline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//WorkFlow/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//WorkFlow/workparameter"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//CheckEqual"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//FlowLine">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//FlowLine/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//FlowLine/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//FlowLine/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//FlowLine/value"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//Expression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Expression/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Expression/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Expression/condition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Expression/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Expression/union"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Expression/expressText"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Function/functionType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Function/operation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//Function/workflow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Function/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ForEach">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ForEach/item"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ForEach/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ForEach/array"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ForEach/arrayType"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//IF">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//IF/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//IF/autoExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//CallFun">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CallFun/name"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//SwiperWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperWidget/controller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//SwiperWidget/swiperevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//SwiperWidget/swiperstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//SwiperStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/index"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/autoPlay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/interval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/indicator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/loop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/vertical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/itemSpace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperStyle/displayMode"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//SwiperEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SwiperEvent/onChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//OperationLibray">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//OperationLibray/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//OperationLibray/workflows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//OperationLibray/projectparameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//OperationLibray/domainmodel"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//PageRefrence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//PageRefrence/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PageRefrence/parameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PageRefrence/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PageRefrence/foreach"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//PageRefrence/pageevent"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TabsContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsContainer/barPosition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsContainer/index"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TabsContainer/tabs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TabsContainer/tabsevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TabsContainer/tabsstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TabContent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TabContent/tabBar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TabContent/tabcontentstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TabsStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsStyle/scrollable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsStyle/barMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsStyle/vertical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsStyle/barWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsStyle/barHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsStyle/animationDuration"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TabItem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabItem/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabItem/image"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabItem/selectedImage"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TabsEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TabsEvent/onChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//StackContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//StackContainer/stackevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//StackContainer/stackstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//StackEvent"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//StackStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//StackStyle/alignContent"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ScrollContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ScrollContainer/scrollevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ScrollContainer/scrollstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ScrollEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollEvent/onScroll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollEvent/onScrollEdge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollEvent/onScrollEnd"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ScrollStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollStyle/scrollable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollStyle/scrollBar"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollStyle/scrollBarColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollStyle/scrollBarWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ScrollStyle/edgeEffect"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//Scroller">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/assginScroll"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/scrollType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/xOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/yOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/curve"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/edge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/next"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//Scroller/index"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ToggleWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ToggleWidget/isOn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ToggleWidget/toggleType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ToggleWidget/toggleevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ToggleWidget/togglestyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ToggleEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ToggleEvent/onChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ToggleStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ToggleStyle/selectedColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ToggleStyle/switchPointColor"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TimePickerWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TimePickerWidget/selected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TimePickerWidget/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TimePickerWidget/end"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TimePickerWidget/timepickerevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TimePickerWidget/timepickerstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TimePickerEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TimePickerEvent/onChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TimePickerStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TimePickerStyle/useMilitaryTime"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//DatePickerWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DatePickerWidget/selected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DatePickerWidget/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DatePickerWidget/end"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//DatePickerWidget/datepickerevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//DatePickerWidget/datepickerstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//DatePickerEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DatePickerEvent/onChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//DatePickerStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DatePickerStyle/lunar"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextPickerWidget">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TextPickerWidget/textpickerevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//TextPickerWidget/textpickerstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextPickerEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextPickerEvent/onChange"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TextPickerStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextPickerStyle/range"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextPickerStyle/selected"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextPickerStyle/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//TextPickerStyle/defaultPickerItemHeight"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//DividerWidget">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//DividerWidget/dividerstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//DividerStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DividerStyle/vertical"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DividerStyle/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DividerStyle/strokeWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DividerStyle/lineCap"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//CustomDialogContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//CustomDialogContainer/customdialogstyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//CustomDialogContainer/customdialogevent"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//CustomDialogStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogStyle/autoCancel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogStyle/alignment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogStyle/offsetx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogStyle/offsety"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogStyle/customStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogStyle/gridCount"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//CustomDialogEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogEvent/cancel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CustomDialogEvent/confirm"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//OpenDialog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//OpenDialog/assignDialog"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//CloseDialog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//CloseDialog/assignDialog"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//DataPreferences">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DataPreferences/preferencesType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DataPreferences/preferences"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TerminateSelf"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//SetTimeOut">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SetTimeOut/handler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SetTimeOut/delay"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ClearTimeOut">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ClearTimeOut/timeoutID"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ShowToastOptions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ShowToastOptions/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ShowToastOptions/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ShowToastOptions/bottom"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//DomainModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DomainModel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//DomainModel/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//DomainModel/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//EntityRefrence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//EntityRefrence/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//EntityRefrence/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//EntityRefrence/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//GridContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridContainer/columnsTemplate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridContainer/rowsTemplate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridContainer/columnsGap"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridContainer/rowsGap"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GridContainer/gridevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GridContainer/gridstyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GridContainer/griditemcontainer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridContainer/cachedCount"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//GridEvent"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//GridStyle"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//ChangeIndex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ChangeIndex/tabsID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ChangeIndex/tabID"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//TabContentStyle"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//GridItemContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridItemContainer/rowStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridItemContainer/rowEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridItemContainer/columnStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridItemContainer/columnEnd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//GridItemContainer/forceRebuild"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GridItemContainer/griditemstyle"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//GridItemContainer/griditemevent"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//SearchWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchWidget/hint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchWidget/searchbutton"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchWidget/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//SearchWidget/searchevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//SearchWidget/searchstyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchWidget/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchWidget/placeholder"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//SearchEvent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchEvent/onSearch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchEvent/onChange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchEvent/onTranslate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchEvent/onShare"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchEvent/onSubmit"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//SearchStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchStyle/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchStyle/placeholdercolor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchStyle/caretcolor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchStyle/placeholderSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//SearchStyle/placeholderWeight"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//BlankWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//BlankWidget/min"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//BlankWidget/blankstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//BlankStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//BlankStyle/color"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ProgressWidget">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressWidget/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressWidget/total"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressWidget/progressType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressWidget/showType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ProgressWidget/progressevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//ProgressWidget/progressstyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ProgressStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressStyle/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressStyle/strokeWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressStyle/scaleCount"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressStyle/scaleWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//ProgressStyle/color"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//ProgressEvent"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//LineContainer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//LineContainer/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//LineContainer/height"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//LineContainer/lineevent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference arkUIModel.ecore#//LineContainer/linestyle"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//LineEvent"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//LineStyle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//LineStyle/startPoint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//LineStyle/endPoint"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//WorkOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute arkUIModel.ecore#//WorkOperation/title"/>
+    </genClasses>
+    <genClasses ecoreClass="arkUIModel.ecore#//GridItemStyle"/>
+    <genClasses ecoreClass="arkUIModel.ecore#//GridItemEvent"/>
+  </genPackages>
+</genmodel:GenModel>

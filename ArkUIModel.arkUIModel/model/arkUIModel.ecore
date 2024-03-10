@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="arkUIModel" nsURI="http://www.example.org/arkUIModel" nsPrefix="arkUIModel">
+  <eClassifiers xsi:type="ecore:EClass" name="GUIModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stylelibray" eType="#//StyleLibray"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DevicesType"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootpage" eType="#//UIStruct"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerevent" eType="#//TriggerEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="animationlibray" eType="#//AnimationLibray"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uilogic" upperBound="-1"
+        eType="#//UILogic" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uidesign" upperBound="-1"
+        eType="#//UIDesign" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operationlibray" eType="#//OperationLibray"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Page">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isHome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uilogic" eType="#//UILogic"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uidesign" eType="#//UIDesign"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subpages" upperBound="-1"
+        eType="#//Page"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageroute" upperBound="-1"
+        eType="#//Page"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UILogic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflow" upperBound="-1"
+        eType="#//WorkFlow" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageparameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIDesign">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageview" eType="#//PageStruct"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageStruct">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="widgets" upperBound="-1"
+        eType="#//UIComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageevent" eType="#//PageEvent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIComponent" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="widgetType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="widget" upperBound="-1"
+        eType="#//UIComponent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="funflow" upperBound="-1"
+        eType="#//WorkFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" upperBound="-1" eType="#//PageStruct"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pagerefrence" upperBound="-1"
+        eType="#//PageRefrence" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="foreach" eType="#//ForEach"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="if" eType="#//IF" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textevent" eType="#//TextEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textstyle" eType="#//TextStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateEffect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttonevent" eType="#//ButtonEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="buttonstyle" eType="#//ButtonStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlexContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wrap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="justifyContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignItems" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flexevent" eType="#//FlexEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flexstyle" eType="#//FlexStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleLibray">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styleclass" upperBound="-1"
+        eType="#//StyleClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aspectRatio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paddingleft" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginleft" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="align" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundImage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="border" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="animationclass" eType="#//AnimationClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paddingright" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paddingtop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paddingbottom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginright" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="margintop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginbottom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="borderRadius" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="backgroundImageSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveOperation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returntype" eType="#//Parameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextInputWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controller" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textinputevent" eType="#//TextInputEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textinputstyle" eType="#//TextInputStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="space" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scroller" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listitemcontainer" upperBound="-1"
+        eType="#//ListItemContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listevent" eType="#//ListEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="liststyle" eType="#//ListStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minFontSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxFontSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textAlign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textOverflow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontFamily" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLines" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="decorationType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="letterSpacing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textCase" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baselineOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="decorationColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextInputStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholderColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholderFont" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="enterKeyType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caretColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxLength" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fontFamily" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputFilter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterType" eType="#//PType"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assign" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="const" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RowContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="space" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignItems" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="justifyContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rowevent" eType="#//RowEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rowstyle" eType="#//RowStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bindMenu" eType="#//ContainerItems"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColumnContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="justifyContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignItems" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="space" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columnevent" eType="#//ColumnEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columnstyle" eType="#//ColumnStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonStyle" eSuperTypes="#//StyleClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlexStyle" eSuperTypes="#//StyleClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RowStyle" eSuperTypes="#//StyleClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ColumnStyle" eSuperTypes="#//StyleClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ListStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listDirection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edgeEffect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="divider" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="chainAnimation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollBar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cachedCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strokeWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startMargin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endMargin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListItemStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sticky" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListItemContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listitemevent" eType="#//ListItemEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listitemstyle" eType="#//ListItemStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageevent" eType="#//ImageEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imagestyle" eType="#//ImageStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchTextDirection" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fitOriginalSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fillColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="objectFit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="objectRepeat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoResize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="renderMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interpolation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceSizeHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="syncLoad" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceSizeWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlow" abstract="true" eSuperTypes="#//PrimitiveOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventclass" upperBound="-1"
+        eType="#//Event" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onClick" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onTouch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onDragStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onDragEnter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onDragMove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onDragLeave" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onDrop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onAppear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onDisAppear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onAreaChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onPageHide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aboutToAppear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onPageShow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onBackPress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aboutToDisappear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColumnEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RowEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlexEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onComplete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onError" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onFinish" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onFocus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onBlur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onBlur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onFocus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextInputEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onSubmit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onCopy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onPaste" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onCut" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onEditChanged" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onEditChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onScroll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onScrollIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onReachStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onReachEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onScrollStop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onItemDelete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onItemMove" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onBlur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onFocus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListItemEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UIOperation" abstract="true" eSuperTypes="#//PrimitiveOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SeviceOperation" abstract="true" eSuperTypes="#//PrimitiveOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoopOp" eSuperTypes="#//ControlFlow">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="step" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseOp" eSuperTypes="#//ControlFlow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HttpOperation" eSuperTypes="#//SeviceOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="httpType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="res" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetParameter" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SetParameter" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnimationClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="curve" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iterations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="playMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageAnimator" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imagesitem" upperBound="-1"
+        eType="#//ImagesItem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageanimatorevent" eType="#//ImageAnimatorEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imageanimatorstyle" eType="#//ImageAnimatorStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImagesItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="top" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="left" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageAnimatorStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reverse" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fixedSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preDecode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fillMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="iterations" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageAnimatorEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onPause" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onRepeat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onCancel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onFinish" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RouteSkip" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="page" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GetRouteValue" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DevicesType">
+    <eLiterals name="PHONE"/>
+    <eLiterals name="TABLET" value="1"/>
+    <eLiterals name="COMPUTER" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtraOperation" abstract="true" eSuperTypes="#//PrimitiveOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SeqOp" eSuperTypes="#//ControlFlow">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//LineType"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ExecuteType">
+    <eLiterals name="SYN"/>
+    <eLiterals name="ASYNC" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIStruct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" upperBound="-1" eType="#//Page"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnimationLibray">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="animationclass" upperBound="-1"
+        eType="#//AnimationClass" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HttpType">
+    <eLiterals name="GET"/>
+    <eLiterals name="POST" value="1"/>
+    <eLiterals name="HEAD" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container" abstract="true" eSuperTypes="#//UIComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true" eSuperTypes="#//UIComponent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//TypeCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//EntityAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superEntity" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityrefrence" upperBound="-1"
+        eType="#//EntityRefrence" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VariableType">
+    <eLiterals name="class"/>
+    <eLiterals name="number" value="1"/>
+    <eLiterals name="string" value="2"/>
+    <eLiterals name="boolean" value="3"/>
+    <eLiterals name="array" value="4"/>
+    <eLiterals name="callfun" value="5"/>
+    <eLiterals name="resource" value="6"/>
+    <eLiterals name="any" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeCS"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Array" eSuperTypes="#//TypeCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atype" eType="#//TypeCS"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigationContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toolbar" eType="#//ContainerItems"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="menu" eType="#//ContainerItems"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="navigationevent" eType="#//NavigationEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="navigationstyle" eType="#//NavigationStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//ContainerItems"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigationStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hideTitleBar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hideBackButton" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titleMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hideToolBar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigationEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onTitleModeChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerItem" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerItems" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//ContainerItem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartOp" eSuperTypes="#//ControlFlow"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EndOp" eSuperTypes="#//ControlFlow"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkFlow">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" upperBound="-1"
+        eType="#//Function" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowline" upperBound="-1"
+        eType="#//FlowLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ExecuteType"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workparameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckEqual" eSuperTypes="#//ExtraOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowLine">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Function"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Function"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//LineType"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PType">
+    <eLiterals name="input"/>
+    <eLiterals name="output" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="union" eType="#//UnionType"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expressText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LineType">
+    <eLiterals name="sequence"/>
+    <eLiterals name="continue" value="1"/>
+    <eLiterals name="condition" value="2"/>
+    <eLiterals name="exception" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="#//PrimitiveOperation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflow" eType="#//WorkFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RouteType">
+    <eLiterals name="push"/>
+    <eLiterals name="back" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForEach">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="item" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="array" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrayType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IF">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallFun" eSuperTypes="#//TypeCS">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnionType">
+    <eLiterals name="and"/>
+    <eLiterals name="or" value="1"/>
+    <eLiterals name="not" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SwiperWidget" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controller" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swiperevent" eType="#//SwiperEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="swiperstyle" eType="#//SwiperStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SwiperStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoPlay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="indicator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="loop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemSpace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SwiperEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationLibray">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflows" upperBound="-1"
+        eType="#//WorkFlow" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projectparameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainmodel" eType="#//DomainModel"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageRefrence">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="if" eType="#//IF" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="foreach" eType="#//ForEach"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pageevent" eType="#//PageEvent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabsContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="barPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabs" upperBound="-1" eType="#//TabContent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabsevent" eType="#//TabsEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabsstyle" eType="#//TabsStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabContent" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabBar" eType="#//TabItem"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabcontentstyle" eType="#//TabContentStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabsStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="barMode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="barWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="barHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="animationDuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabItem" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectedImage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabsEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StackContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stackevent" eType="#//StackEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stackstyle" eType="#//StackStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StackEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StackStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignContent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScrollContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scrollevent" eType="#//ScrollEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scrollstyle" eType="#//ScrollStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScrollEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onScroll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onScrollEdge" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onScrollEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScrollStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollBar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollBarColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollBarWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edgeEffect" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scroller" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assginScroll" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scrollType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="curve" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edge" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="next" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToggleWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toggleType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toggleevent" eType="#//ToggleEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="togglestyle" eType="#//ToggleStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToggleEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToggleStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectedColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="switchPointColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimePickerWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timepickerevent" eType="#//TimePickerEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timepickerstyle" eType="#//TimePickerStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimePickerEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimePickerStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useMilitaryTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatePickerWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datepickerevent" eType="#//DatePickerEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="datepickerstyle" eType="#//DatePickerStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatePickerEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatePickerStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lunar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextPickerWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textpickerevent" eType="#//TextPickerEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="textpickerstyle" eType="#//TextPickerStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextPickerEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextPickerStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultPickerItemHeight"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DividerWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dividerstyle" eType="#//DividerStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DividerStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vertical" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strokeWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineCap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDialogContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customdialogstyle" eType="#//CustomDialogStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customdialogevent" eType="#//CustomDialogEvent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDialogStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="autoCancel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offsetx" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offsety" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customStyle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gridCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDialogEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cancel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="confirm" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpenDialog" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignDialog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CloseDialog" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignDialog" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataPreferences" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preferencesType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="preferences" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminateSelf" eSuperTypes="#//UIOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SetTimeOut" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="handler" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delay" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearTimeOut" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeoutID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ShowToastOptions" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bottom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityRefrence">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GridContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnsTemplate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowsTemplate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnsGap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowsGap" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gridevent" eType="#//GridEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gridstyle" eType="#//GridStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="griditemcontainer" upperBound="-1"
+        eType="#//GridItemContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cachedCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GridEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GridStyle" eSuperTypes="#//StyleClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeIndex" eSuperTypes="#//UIOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tabsID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tabID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabContentStyle" eSuperTypes="#//StyleClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GridItemContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columnEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forceRebuild" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="griditemstyle" eType="#//GridItemStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="griditemevent" eType="#//GridItemEvent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SearchWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="searchbutton" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="searchevent" eType="#//SearchEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="searchstyle" eType="#//SearchStyle"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholder" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SearchEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onSearch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onChange" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onTranslate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onShare" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="onSubmit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SearchStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholdercolor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="caretcolor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholderSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="placeholderWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BlankWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blankstyle" eType="#//BlankStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BlankStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgressWidget" eSuperTypes="#//Widget">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="total" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progressType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="showType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="progressevent" eType="#//ProgressEvent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="progressstyle" eType="#//ProgressStyle"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgressStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="strokeWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgressEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LineContainer" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lineevent" upperBound="-1"
+        eType="#//LineEvent" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linestyle" upperBound="-1"
+        eType="#//LineStyle" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LineEvent" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LineStyle" eSuperTypes="#//StyleClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endPoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkOperation" eSuperTypes="#//SeviceOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GridItemStyle" eSuperTypes="#//StyleClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GridItemEvent" eSuperTypes="#//Event"/>
+</ecore:EPackage>

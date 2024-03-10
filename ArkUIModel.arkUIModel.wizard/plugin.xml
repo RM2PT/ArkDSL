@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension
+	point = "org.eclipse.ui.newWizards">
+	<category
+		id = "com.rm2pt.arkmodel"
+		name = "Arkmodel">
+	</category>
+	<wizard
+		id = "com.rm2pt.arkmodelproject.graphicmodeling"
+		name = "Arkmodel Project"
+		icon = "icons/new_REMODEL_proj.gif"
+		category = "com.rm2pt.arkmodel"
+		class = "com.rm2pt.arkmodelproject.wizard.ArkmodelProjectWizard"
+		project = "true">
+		<description>
+			Create a Arkui modeling project based on EMF (Meta-Modeling) and Sirius (DSML)
+		</description>
+	</wizard>
+</extension>
+
+</plugin>
